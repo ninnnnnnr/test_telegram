@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Test_Telegram{% endblock %}
+{% block body %}
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Authorization</h2>
+              {% if form.errors %}
+              {{ form.errors.username }}
+              {% endif %}
+              <form method="post" action="">
+                {% csrf_token %}
+                <div class="form-outline mb-4">
+                  <label>User name</label>
+                  {{ form.username }}
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label>Password</label>
+                  {{ form.password }}
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-success btn-block btn-lg text-body">Login</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Don't have an account? <a href="http://t.me/nozhenko_testBot"
+                    class="fw-bold text-body"><u>Registration</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,6 @@
+/venv/
+/test_telegram/db.sqlite3
+/test_telegram/main/migrations/*
+!/test_telegram/main/migrations/__init__.py
+/test_telegram/media/uploads/
+.idea/
